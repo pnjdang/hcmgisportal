@@ -14,7 +14,7 @@
                   <div class="main_menu float-right">
                      <div class="menu">
                         <ul class="clearfix">
-                           <li class="active"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>">Home</a></li>
+                           <li class="active"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>">Trang chủ</a></li>
                            <li><a href="<?= Yii::$app->urlManager->createUrl('site/gioithieu')?>">Giới thiệu</a></li>
                            <li><a href="<?= Yii::$app->urlManager->createUrl('site/sanpham')?>">Sản phẩm</a></li>
                            <li><a href="<?= Yii::$app->urlManager->createUrl('site/tintuc')?>">Tin tức</a></li>
