@@ -1,0 +1,25 @@
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+	-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+	}
+.marker-cluster {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-moz-transition: 0.4s;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	color: #fff;
+	width: 32px;
+	height: 38px;
+	background-color: #1396e2;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 38px;
+}
+.marker-cluster:hover {
+	background-color: #073855;
+}

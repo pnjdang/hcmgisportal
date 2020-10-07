@@ -1,0 +1,36 @@
+.phongthinghiem-list::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+}
+
+.phongthinghiem-list {
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.phongthinghiem-item {
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.phongthinghiem-item .ten{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #5b9bd1;
+}
+
+.phongthinghiem-item .nganhnghe {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.leaflet-popup-content {
+    width: 335px;
+  }
+.border-bottom-1px-solid{
+    border-bottom: solid 1px ;
+}
