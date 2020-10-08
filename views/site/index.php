@@ -73,7 +73,7 @@
           <div class="team_imform">
               <p class="team_mem_name"><a href="https://opendata.hcmgis.vn/" target="_blank">HCMGIS OPENDATA</a></p>
             <p>Nền tảng chia sẻ dữ liệu mở.</p>
-            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=2875" target="_blank">Xem thêm…</a></p>
+            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=2875" target="_blank">Xem thêm….</a></p>
           </div>
         </div>
       </div>
