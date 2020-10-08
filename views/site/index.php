@@ -12,7 +12,7 @@
           <div class="col-sm-12">
               <div class="full text_align_center">
           <div class="full">
-              <img src="<?= Yii::$app->homeUrl?>images/banner_DANG.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px;">
+              <img src="<?= Yii::$app->homeUrl?>site/images/banner_DHDXI.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px;">
           </div>
               </div>
           </div>
@@ -73,7 +73,7 @@
           <div class="team_imform">
               <p class="team_mem_name"><a href="https://opendata.hcmgis.vn/" target="_blank">HCMGIS OPENDATA</a></p>
             <p>Nền tảng chia sẻ dữ liệu mở.</p>
-            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=2875" target="_blank">Xem thêm…</a></p>
+            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=2875" target="_blank">Xem thêm….</a></p>
           </div>
         </div>
       </div>
