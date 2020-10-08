@@ -12,7 +12,7 @@
           <div class="col-sm-12">
               <div class="full text_align_center">
           <div class="full">
-              <img src="<?= Yii::$app->homeUrl?>images/banner_DANG.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px;">
+              <img src="<?= Yii::$app->homeUrl?>site/images/banner_DHDXI.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px;">
           </div>
               </div>
           </div>
