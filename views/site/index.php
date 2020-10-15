@@ -118,6 +118,17 @@
           </div>
         </div>
       </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="full team_blog">
+            <div class="team_member_img"><a href="http://pointcloud.hcmgis.vn/" target="_blank"><img src="<?= Yii::$app->homeUrl?>images/pointcloud_thumb.jpg" alt="#"></a>
+          </div>
+          <div class="team_imform">
+              <p class="team_mem_name"><a href="http://pointcloud.hcmgis.vn/" target="_blank">HCMGIS POINTCLOUD</a></p>
+            <p>Nền tảng chia sẻ dữ liệu đám mây điểm.</p>
+            <p><a href="<?= Yii::$app->homeUrl?>site/index?#" target="_blank">Xem thêm…</a></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
