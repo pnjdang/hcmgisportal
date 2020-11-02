@@ -105,9 +105,9 @@ class SiteController extends Controller
      */
     public function actionSanpham()
     {
-        $model['hcmgis'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'hcmgis'])->orderBy(['menu_order'=> SORT_ASC])->all();
-        $model['sanpham'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'product'])->orderBy(['post_modified'=> SORT_DESC])->all();
-        $model['tool'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'tool'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['hcmgis'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'hcmgis'])->orderBy(['menu_order'=> SORT_ASC])->all();
+        $model['sanpham'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'product'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['tool'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'tool'])->orderBy(['post_modified'=> SORT_DESC])->all();
         //DebugService::dumpdie($model['hcmgis']);
         return $this->render('sanpham',['model' => $model]);
     }
@@ -119,8 +119,8 @@ class SiteController extends Controller
      */
     public function actionTulieu()
     {
-        $model['tailieu'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'doc'])->orderBy(['post_modified'=> SORT_DESC])->all();
-        $model['hinhanh'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'pic'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['tailieu'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'doc'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['hinhanh'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'pic'])->orderBy(['post_modified'=> SORT_DESC])->all();
         return $this->render('tulieu',['model' => $model]);
     }
     
@@ -131,7 +131,7 @@ class SiteController extends Controller
      */
     public function actionTintuc()
     {
-        $model['baiviet'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['ping_status' => 'open'])->where(['post_type' => 'post'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['baiviet'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type' => 'post'])->orderBy(['post_date'=> SORT_DESC])->all();
        // DebugService::dumpdie($model['baiviet']);
         return $this->render('tintuc',['model' => $model['baiviet']]);
     }

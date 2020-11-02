@@ -22,7 +22,7 @@ class AppAssetUser extends AssetBundle {
     public $css = [
         'css/global/font-awesome.min.css',
         'css/global/simple-line-icons.min.css',
-        'css/global/bootstrap.min.css',
+        'css/bootstrap.min.css',
         'css/global/bootstrap-switch.min.css',
         'css/global/icheck.css',
         'css/global/components.min.css',

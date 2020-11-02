@@ -44,7 +44,7 @@ class AppAsset extends AssetBundle {
         'js/template-scripts.js',
         //'js/popper.min.js',
         'js/wow.js',
-        'js/custom.js',
+       //'js/custom.js',
         'js/pdf.min.js',
 //        'js/global/jquery.ilightbox.js',
 //        'js/global/jquery.slimscroll.min.js',
