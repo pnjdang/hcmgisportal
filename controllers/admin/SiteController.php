@@ -57,41 +57,10 @@ class SiteController extends AbstractAdminController
     public function actionIndex()
     {
         $this->layout = "@app/views/layouts/main_chart";
-        $chuyengia_query = Chuyengia::find()->joinWith('donvi')->where(['chuyengia.status' => 1]);
-        $model['chuyengia']['so_luong'] = DbService::cloneQuery($chuyengia_query)->count();
-        $ptn = PhongThiNghiem::find()->where(['status' => 1])->count();
-        $model['phongthinghiem']['linhvuc'] = TkPtnLinhvuc::find()->asArray()->orderBy('ten_lv')->all();
-//        DebugService::dumpdie($model['phongthinghiem']['linhvuc']);
-        $taikhoan = TaiKhoan::find()->where(['admin' => false])->count();
-        $tkchuyengia = TkChuyengia::find()->select('ten_lvql,sl_chuyengia')->asArray()->orderBy('ten_lvql')->all();
-        $tkptnqh = TkPtnQuanhuyen::find()->select('quan_huyen, sl_ptn')->asArray()->orderBy('quan_huyen')->all();
-        $pdkchuyengia = Chuyengia::find()->where(['status' => 2])->count();
-        $pdkphongthinghiem = PhongThiNghiem::find()->where(['status' => 2])->count();
-        $thongke_linhvuc = LinhvucnghiencuuCap1::find()->where(['linhvucnghiencuu_cap1.status' => 1])->orderBy('id_cap1')->all();
-        foreach($thongke_linhvuc as $i => $tklinhvuc){
-            $model['chuyengialinhvuc'][$i]['soluong'] = Chuyengia::find()->leftJoin('chuyengia_linhvuc','chuyengia.id_chuyengia = chuyengia_linhvuc.chuyengia_id')->where('chuyengia.status = 1 and chuyengia_linhvuc.cap1_id = ' . $tklinhvuc->id_cap1)->count();
-            $model['chuyengialinhvuc'][$i]['ten_linhvuc'] = $tklinhvuc->ten_cap1;
-        }
-        $model['chuyengiachuyennganh'] = (new Query())->select('cap3_id,count(chuyengia_id) as soluong,ten_cap3 as ten_chuyennganh')->from('chuyengia_chuyennganh')
-            ->leftJoin('linhvucnghiencuu_cap3','linhvucnghiencuu_cap3.id_cap3 = chuyengia_chuyennganh.cap3_id')->groupBy('cap3_id,ten_cap3')->orderBy('cap3_id')->all();
-        $model['chuyengia']['nhomdonvi'] = null;
-        $nhomdonvi = Nhomdonvi::find()->where(['status' => 1])->all();
-        foreach($nhomdonvi as $i => $nhom){
-            $model['chuyengia']['nhomdonvi'][$i]['so_luong'] = DbService::cloneQuery($chuyengia_query)->andWhere(['don_vi.nhomdonvi_id' => $nhom->id_nhomdonvi])->count();
-            $model['chuyengia']['nhomdonvi'][$i]['ten_nhom'] = $nhom->ten_nhomdonvi;
-        }
-
-//        DebugService::dumpdie(json_encode($model['phongthinghiem']['linhvuc'], JSON_UNESCAPED_UNICODE));
-//        DebugService::dumpdie($model['chuyengia']);
+        
         return $this->render('index', [
 //            'chuyengia' => $chuyengia,
-            'ptn' => $ptn,
-            'tkchuyengia' => $tkchuyengia,
-            'tkptnqh' => $tkptnqh,
-            'taikhoan' => $taikhoan,
-            'pdkchuyengia' => $pdkchuyengia,
-            'pdkphongthinghiem' => $pdkphongthinghiem,
-            'model' => $model
+            'ptn' => 1,
         ]);
     }
 

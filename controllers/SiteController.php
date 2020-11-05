@@ -32,7 +32,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\services\UtilsService;
+use yii\base\BaseObject;
+//use app\services\UtilsService;
 
 class SiteController extends Controller
 {
@@ -75,17 +76,20 @@ class SiteController extends Controller
     public function actionLienhe()
     {
         date_default_timezone_set('Asia/Ho_chi_minh');
+        //$this->layout = "@app/views/layouts/user/main_user";
         $request = Yii::$app->request;
-        $lien_he = new LienHe();
-        $lien_he->created_at = date("Y-m-d H:i:s");
+        $model = new LienHe();
+        $model->created_at = date("Y-m-d H:i:s");
         //$lien_he->created_by = $request->ho_ten;
+        //DebugService::dumpdie($model);
 
-        if ($request->isPost && $lien_he->load($request->post()) && $lien_he->save()) {
-            UtilsService::pushMessage(UtilsService::$_M_SUCCESS, 'Gửi thông tin thành công!');
+        if ($request->isPost && $model->load($request->post()) && $model->save()) {
+            //UtilsService::pushMessage(UtilsService::$_M_SUCCESS, 'Gửi thông tin thành công!');
             UtilityService::alert('success');
             return $this->redirect($request->referrer);
         }
-        return $this->render('lienhe', ['lien_he' => $lien_he]);
+
+        return $this->render('lienhe', ['model' => $model]);
     }
 
     /**
@@ -105,9 +109,9 @@ class SiteController extends Controller
      */
     public function actionSanpham()
     {
-        $model['hcmgis'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'hcmgis'])->orderBy(['menu_order'=> SORT_ASC])->all();
-        $model['sanpham'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'product'])->orderBy(['post_modified'=> SORT_DESC])->all();
-        $model['tool'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'tool'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['hcmgis'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'hcmgis'])->orderBy(['menu_order'=> SORT_ASC])->all();
+        $model['sanpham'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'product'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['tool'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'tool'])->orderBy(['post_modified'=> SORT_DESC])->all();
         //DebugService::dumpdie($model['hcmgis']);
         return $this->render('sanpham',['model' => $model]);
     }
@@ -119,8 +123,8 @@ class SiteController extends Controller
      */
     public function actionTulieu()
     {
-        $model['tailieu'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'doc'])->orderBy(['post_modified'=> SORT_DESC])->all();
-        $model['hinhanh'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['post_type'=>'pic'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['tailieu'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'doc'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['hinhanh'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type'=>'pic'])->orderBy(['post_modified'=> SORT_DESC])->all();
         return $this->render('tulieu',['model' => $model]);
     }
     
@@ -131,7 +135,7 @@ class SiteController extends Controller
      */
     public function actionTintuc()
     {
-        $model['baiviet'] = GisPosts::find()->where(['post_status' => 'publish'])->where(['ping_status' => 'open'])->where(['post_type' => 'post'])->orderBy(['post_modified'=> SORT_DESC])->all();
+        $model['baiviet'] = GisPosts::find()->where(['post_status' => '1'])->where(['post_type' => 'post'])->orderBy(['post_date'=> SORT_DESC])->all();
        // DebugService::dumpdie($model['baiviet']);
         return $this->render('tintuc',['model' => $model['baiviet']]);
     }
@@ -215,23 +219,6 @@ class SiteController extends Controller
         ]);
     }
 
-   
-
-    
-
-    public function actionSearch()
-    {
-        // DebugService::dumpdie(Yii::$app->request->post());
-        $post = Yii::$app->request->post();
-        // $chuyengia = " ho_ten like '%" . mb_strtoupper($post['ho_ten']) . "%'";
-        if ($post['chon_lop'] == 1) {
-            return $this->redirect(Yii::$app->homeUrl . 'site/map?key=1=1%20and%20ho_ten%20like%20%27%25' . mb_strtoupper($post['ho_ten']) . '%25%27');
-        }
-        if ($post['chon_lop'] == 0) {
-            return $this->redirect(Yii::$app->homeUrl . 'site/map?key=1=1%20and%20ten_tv%20like%20%27%25' . mb_strtoupper($post['ho_ten']) . '%25%27or%20ten_ta%20like%20%27%25' . mb_strtoupper($post['ho_ten']) . '%25%27');
-        }
-    }
-
 
     public function actionSignup()
     {
@@ -242,7 +229,7 @@ class SiteController extends Controller
 
             if ($model->signup()) {
                 UtilityService::alert('dangkythanhcong');
-                return $this->redirect(Yii::$app->urlManager->createUrl('dang-nhap'));
+                return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
             } else {
                 return $this->render('signup', [
                     'model' => $model,
@@ -263,7 +250,7 @@ class SiteController extends Controller
 
             if ($model->sendrequest()) {
                 UtilityService::alert('dangkythanhcong');
-                return $this->redirect(Yii::$app->urlManager->createUrl('dang-nhap'));
+                return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
             } else {
                 return $this->render('signup', [
                     'model' => $model,

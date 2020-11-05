@@ -73,7 +73,6 @@
 .page-header .page-header-top {
     height: 50px;
     background: #1778F9;
-    background-image: url(http://demo.interface.club/limitless/assets/images/bg.png);
     background-repeat: repeat;
 }
 
@@ -1150,7 +1149,6 @@
 }
 
 .page-content {
-    background-image: url(http://demo.interface.club/limitless/assets/images/bg.png);
     background-repeat: repeat;
     padding: 15px 0
 }
@@ -1992,7 +1990,6 @@
     border-bottom-style: dashed;
     height: 70px;
     background-color: #1677F8;
-    background-image: url(http://demo.interface.club/limitless/assets/images/bg.png);
     background-repeat: repeat; }
 /* line 1013, demo/static/demo/css/main.scss */
 .banner-block-list .banner-block .icon {
@@ -2121,7 +2118,6 @@
 
 /* line 1143, demo/static/demo/css/main.scss */
 .banner-tamnhin-sumenh {
-    background-image: url(http://demo.interface.club/limitless/assets/images/bg.png);
     background-repeat: repeat;
     background-color: #EEF6FD;
     height: 120px;

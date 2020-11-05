@@ -17,6 +17,8 @@ class AbstractAdminController extends Controller
 {
     public function behaviors()
     {
+        $this->layout = "@app/views/layouts/admin/main";
+        
         return [
             'access' => [
                 'class' => AccessControl::className(),

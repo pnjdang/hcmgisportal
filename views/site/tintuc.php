@@ -34,7 +34,7 @@ use yii\helpers\ArrayHelper;
                     <div class="blog_post_img"> <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $baiviet['ID']?>" style="cursor: pointer; outline: 0px;"><img src="<?= $baiviet['post_img'] != null ? $baiviet['post_img'] : Yii::$app->homeUrl.'images/HCMGIS_demo.jpg'?>" alt="#"></a> </div>
                            <div class="blog_post_cont">
                                <p class="title"><a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $baiviet['ID']?>" style="cursor: pointer; outline: 0px;"><?= ($baiviet['post_title'] != null) ? $baiviet['post_title'] : '' ?></a></p> 
-                              <p class="date"><?= ($baiviet['post_modified'] != null) ? $baiviet['post_modified'] : '' ?></p>
+                              <p class="date"><?= date('D d-m-Y', strtotime($baiviet['post_date']))?></p>
                               <div class="post_head"><?= ($baiviet['post_content_filtered'] != null) ? $baiviet['post_content_filtered'] : '' ?></div>
                            </div>
                         </div>
