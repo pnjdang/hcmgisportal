@@ -76,15 +76,11 @@ class SiteController extends Controller
     public function actionLienhe()
     {
         date_default_timezone_set('Asia/Ho_chi_minh');
-        //$this->layout = "@app/views/layouts/user/main_user";
         $request = Yii::$app->request;
         $model = new LienHe();
         $model->created_at = date("Y-m-d H:i:s");
-        //$lien_he->created_by = $request->ho_ten;
-        //DebugService::dumpdie($model);
 
         if ($request->isPost && $model->load($request->post()) && $model->save()) {
-            //UtilsService::pushMessage(UtilsService::$_M_SUCCESS, 'Gửi thông tin thành công!');
             UtilityService::alert('success');
             return $this->redirect($request->referrer);
         }
@@ -99,7 +95,17 @@ class SiteController extends Controller
      */
     public function actionGioithieu()
     {
-        return $this->render('gioithieu');
+        date_default_timezone_set('Asia/Ho_chi_minh');
+        $request = Yii::$app->request;
+        $model = new LienHe();
+        $model->created_at = date("Y-m-d H:i:s");
+
+        if ($request->isPost && $model->load($request->post()) && $model->save()) {
+            UtilityService::alert('success');
+            return $this->redirect($request->referrer);
+        }
+
+        return $this->render('gioithieu', ['model' => $model]);
     }
     
     /**
