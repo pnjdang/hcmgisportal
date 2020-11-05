@@ -11,23 +11,21 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'ho_ten')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'ho_ten')->textInput(['maxlength' => true,'disabled' => true]) ?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'email')->textInput(['maxlength' => true,'disabled' => true]) ?>
 
-    <?= $form->field($model, 'dien_thoai')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'dien_thoai')->textInput(['maxlength' => true,'disabled' => true]) ?>
 
-    <?= $form->field($model, 'noi_dung')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'noi_dung')->textarea(['rows' => 6,'disabled' => true]) ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+    <?= $form->field($model, 'created_at')->textInput(['disabled' => true]) ?>
 
     <?= $form->field($model, 'reply')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'replied_at')->textInput() ?>
 
-    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'replied_by')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'replied_by')->textInput(['maxlength' => true,'disabled' => true]) ?>
 
     <?= $form->field($model, 'noi_dung_reply')->textarea(['rows' => 6]) ?>
 

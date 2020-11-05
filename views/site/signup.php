@@ -54,7 +54,11 @@ use kartik\form\ActiveForm;
                             <?= $form->field($model, 'dienthoai')->input('text')->label('Điện thoại',['class' => 'font-blue-steel uppercase control-label']) ?>
                         </div>
                         <div class="form-group">
-                            <button type="submit" style="width: 100%;color: white" class="btn btn-md bg-blue-sharp uppercase">Đăng ký</button>
+                            <button type="submit" style="width: 100%;color: white" class="btn btn-md bg-green-sharp uppercase">Đăng ký</button>
+                        </div>
+                        <div class="form-group">
+                            <a href="<?= Yii::$app->urlManager->createUrl('site/login') ?>" style="width: 100%;color: blue; font-weight: bold" class="btn uppercase">Đăng nhập</a>
+
                         </div>
 
                         <?php ActiveForm::end(); ?>

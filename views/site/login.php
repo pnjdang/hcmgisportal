@@ -69,7 +69,7 @@ use kartik\form\ActiveForm;
                             </button>
                         </div>
                         <div class="form-group">
-                            <a href="<?= Yii::$app->urlManager->createUrl('dang-ky') ?>" id="register-btn">Đăng ký</a>
+                            <a href="<?= Yii::$app->urlManager->createUrl('site/signup') ?>" style="width: 100%;color: white" class="btn btn-md bg-green-sharp uppercase" id="register-btn">Đăng ký</a>
 
                         </div>
                         <?php ActiveForm::end(); ?>

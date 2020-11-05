@@ -159,6 +159,8 @@ class LienHeController extends Controller
     {
         $request = Yii::$app->request;
         $model = $this->findModel($id);
+        date_default_timezone_set('Asia/Ho_chi_minh');
+        $model->replied_at = date('Y-m-d H:i:s');
 
         if($request->isAjax){
             /*
@@ -219,55 +221,22 @@ class LienHeController extends Controller
     public function actionDelete($id)
     {
         $request = Yii::$app->request;
-        $model = $this->findModel($id);
+        $this->findModel($id)->delete();
 
         if($request->isAjax){
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
-                return [
-                    'title'=> "Update LienHe #".$id,
-                    'content'=>$this->renderAjax('update', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];
-            }else if($model->load($request->post()) && $model->save()){
-                return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "LienHe #".$id,
-                    'content'=>$this->renderAjax('view', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];
-            }else{
-                return [
-                    'title'=> "Update LienHe #".$id,
-                    'content'=>$this->renderAjax('update', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];
-            }
+            return ['forceClose'=>true,'forceReload'=>'#crud-datatable-pjax'];
         }else{
             /*
             *   Process for non-ajax request
             */
-            if ($model->load($request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id_lienhe]);
-            } else {
-                return $this->render('update', [
-                    'model' => $model,
-                    'const' => $this->const,
-                ]);
-            }
+            return $this->redirect(['index']);
         }
+
+
     }
 
     

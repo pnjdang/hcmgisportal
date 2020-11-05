@@ -1,6 +1,7 @@
 <?php
 
 use yii\widgets\DetailView;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\LienHe */
@@ -23,5 +24,5 @@ use yii\widgets\DetailView;
             'noi_dung_reply:ntext',
         ],
     ]) ?>
-
+<?= Html::a('Update', ['update', 'id' => $model->id_lienhe], ['class' => 'btn btn-primary']) ?>
 </div>
