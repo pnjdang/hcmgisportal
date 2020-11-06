@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
-        <?= $form->field($model, 'filename[]')->fileInput(['multiple'=>true]) ?>
+        <?= $form->field($model, 'filename[]')->fileInput(['multiple'=>true, 'accept' => 'doc,docx,image/*']) ?>
     
         <div class="form-group">
             <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>

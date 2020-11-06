@@ -35,12 +35,13 @@ class MediaController extends \yii\web\Controller {
     }
 
     public function actionUpload() {
-        $model = new \app\models\Media();
+        $model = new Media();
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 // form inputs are valid, do something here
                 $names = UploadedFile::getInstances($model, 'filename');
+                
                 foreach ($names as $name) {
                     $path = 'uploads/' . md5($name->baseName) . '.' . $name->extension;
                     if ($name->saveAs($path)) {
