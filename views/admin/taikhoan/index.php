@@ -91,9 +91,6 @@ use yii\captcha\Captcha;
                                     <a href="#thongtincanhan" data-toggle="tab">Thông tin cá nhân</a>
                                 </li>
                                 <li>
-                                    <a href="#anhdaidien" data-toggle="tab">Ảnh đại diện</a>
-                                </li>
-                                <li>
                                     <a href="#doimatkhau" data-toggle="tab">Đổi mật khẩu</a>
                                 </li>
 
@@ -124,32 +121,7 @@ use yii\captcha\Captcha;
                                     <?php ActiveForm::end() ?>
                                 </div>
                                 <!-- END PERSONAL INFO TAB -->
-                                <!-- CHANGE AVATAR TAB -->
-                                <div class="tab-pane" id="anhdaidien">
-                                    <p> Thay đổi ảnh đại diện. </p>
-
-                                    <?php $form = ActiveForm::begin([
-                                        'options' => ['enctype' => 'multipart/form-data'],
-                                        'action' => Yii::$app->homeUrl . 'taikhoan/upload'
-                                    ]) ?>
-                                        <div class="form-group">
-                                            <?= $form->field($model['anhdaidien'],'anhdaidien')->widget(FileInput::className(),[
-                                                'options' => ['accept' => 'image/*'],
-                                                'pluginOptions' => [
-                                                    'showUpload' => false,
-                                                    'browseLabel' => 'Chọn ảnh',
-                                                    'removeLabel' => 'Xóa ảnh',
-                                                    'uploadLabel' => 'Lưu ảnh',
-                                                    'mainClass' => 'input-group-lg'
-                                                ]
-                                            ])->label('Ảnh đại diện')?>
-                                        </div>
-                                        <div class="margin-top-10">
-                                            <button type="submit" class="btn btn-warning">Lưu ảnh</button>
-                                        </div>
-                                    <?php ActiveForm::end() ?>
-                                </div>
-                                <!-- END CHANGE AVATAR TAB -->
+                                
                                 <!-- CHANGE PASSWORD TAB -->
                                 <div class="tab-pane" id="doimatkhau">
                                     <?php $form = ActiveForm::begin([

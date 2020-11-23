@@ -17,14 +17,7 @@ use yii\helpers\Html;
 class LienHeController extends Controller
 {
 
-    public $const;
-
-    public function init(){
-        $this->const = [
-
-        ];
-    }
-
+    
     /**
      * @inheritdoc
      */
@@ -55,7 +48,7 @@ class LienHeController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-           'const' => $this->const
+//           'const' => $this->const
         ]);
     }
 
@@ -81,7 +74,7 @@ class LienHeController extends Controller
         }else{
             return $this->render('view', [
                 'model' => $this->findModel($id),
-                'const' => $this->const,
+//                'const' => $this->const,
             ]);
         }
     }
@@ -141,7 +134,7 @@ class LienHeController extends Controller
             } else {
                 return $this->render('create', [
                     'model' => $model,
-                    'const' => $this->const,
+//                    'const' => $this->const,
                 ]);
             }
         }
@@ -161,6 +154,7 @@ class LienHeController extends Controller
         $model = $this->findModel($id);
         date_default_timezone_set('Asia/Ho_chi_minh');
         $model->replied_at = date('Y-m-d H:i:s');
+        $model->created_by = Yii::$app->user->ho_ten;
 
         if($request->isAjax){
             /*
@@ -205,7 +199,7 @@ class LienHeController extends Controller
             } else {
                 return $this->render('update', [
                     'model' => $model,
-                    'const' => $this->const,
+//                    'const' => $this->const,
                 ]);
             }
         }

@@ -12,7 +12,7 @@
                <div class="col-md-9 col-lg-12">
                    <div class="logo"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>"><img src="<?= Yii::$app->homeUrl?>images/logo.png" alt="#" /></a></div>
                   <div class="main_menu float-right">
-                     <div class="menu">
+                      <div class="menu" style="text-transform: uppercase">
                         <ul class="clearfix">
                            <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/index') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>">Trang chủ</a></li>
                            <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/gioithieu') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/gioithieu')?>">Giới thiệu</a></li>

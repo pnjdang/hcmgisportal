@@ -40,7 +40,8 @@ class DoiMatKhau extends Model
     public function validatePassword($attribute) {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
-            if (!$user || !$user->validatePassword(md5($this->password.'@hcmgis#'))) {
+            if (!$user || !$user->validatePassword($this->password)) {
+                //\app\services\DebugService::dumpdie('validatePassword');
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
@@ -53,6 +54,7 @@ class DoiMatKhau extends Model
     public function change() {
         if ($this->validate()) {
             if($this->validatePassword($this->password)){
+                //\app\services\DebugService::dumpdie('change');
                 $this->addError($this->password, 'Incorrect username or password.');
 
             }
@@ -66,14 +68,15 @@ class DoiMatKhau extends Model
      * @return User|null
      */
     public function getUser() {
-        $user = GisUsers::findOne(['id_taikhoan' => Yii::$app->user->id]);
+        $user = TaiKhoan::findOne(['id_taikhoan' => Yii::$app->user->id]);
         return $user;
     }
 
     public function changePassword(){
         $user = $this->getUser();
+        
         if($user->mat_khau == md5($this->password.'@hcmgis#')){
-            $user->mat_khau = $this->newpassword;
+            $user->mat_khau = md5($this->newpassword.'@hcmgis#');
             $user->save();
             return true;
         } else {

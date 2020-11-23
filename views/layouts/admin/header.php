@@ -36,20 +36,20 @@
                 <li class="dropdown dropdown-user dropdown-dark">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                        data-close-others="true">
-                        <span class="username username-hide-on-mobile"><?= (!Yii::$app->user->isGuest) ? Yii::$app->user->identity->tendangnhap : ''?></span>
+                        <span class="username username-hide-on-mobile"><?= (!Yii::$app->user->isGuest) ? Yii::$app->user->identity->ten_dang_nhap : ''?></span>
                         <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                         <img alt="" class="img-circle"
-                             src="<?= Yii::$app->homeUrl.((!Yii::$app->user->isGuest) ? 'resources/images/photo.jpg' : '')?>"/>
+                             src="<?= Yii::$app->homeUrl.((!Yii::$app->user->isGuest) ? 'resources/images/photo.png' : '')?>"/>
                          </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="<?= Yii::$app->urlManager->createUrl('auth/site/thong-tin-ca-nhan') ?>">
+                            <a href="<?= Yii::$app->urlManager->createUrl('admin/taikhoan/index') ?>">
                                 <i class="fa fa-user"></i> Thông tin cá nhân </a>
                         </li>
 
                         <li class="divider"></li>
                         <li>
-                            <a href="<?= Yii::$app->urlManager->createUrl(['auth/dang-xuat'])?>">
+                            <a href="<?= Yii::$app->urlManager->createUrl(['site/logout'])?>">
                                 <i class="fa fa-sign-out"></i> Đăng xuất </a>
                         </li>
 

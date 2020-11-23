@@ -31,33 +31,6 @@ class AbstractAdminController extends Controller
                     [
                         'actions' => [
                             'login','logout', 'index','thongtincanhan','map','changepass','search','signup','test',
-                            //AdminController
-                            'tongquan','report','reportcheck',
-                            'reportphongthinghiem','checkphongthinghiem',
-                            'reportchuyengia','checkchuyengia',
-                            //
-                            //UserController
-                            'userviewchuyengia','usercreatepdkchuyengia','userreportchuyengia','createpdkchuyengia','updatepdkchuyengia','userviewpdkchuyengia',
-                            'userviewphongthinghiem','usercreatepdkphongthinghiem','userreportphongthinghiem','createpdkphongthinghiem','updatepdkphongthinghiem',
-                            'userthietbi','usercreatethietbi','userlistthietbi','userdeletethietbi','userupdatethietbi',
-                            'usersohuutritue','usercreatesohuutritue','userlistsohuutritue','userdeletesohuutritue','userupdatesohuutritue',
-                            'previewphongthinghiem','nopphieudangkyptn','userviewpdkphongthinghiem','userupdatepdkphongthinghiem',
-                            'searchthietbi','preview','viewpdk',
-                            'userchuyengiaindex','userchuyengiatable',
-                            'create','view','update','delete','copy','viewmap','upload','quanlytaikhoan','updatetaikhoan','restoretaikhoan','viewptn',
-                            'updatepdk',
-                            'userchuyengia','userphongthinghiem','trangchu','lienhe','ptnsearch','createchuyengia','createphongthinghiem','viewchuyengia','viewphongthinghiem','_table_cg',
-
-                            //DangkyController
-                            'phongthinghiem','chuyengia','reply',
-                            'danhsachchuyengia','kiemduyetchuyengia','danhsachphongthinghiem','kiemduyetphongthinghiem',
-                            'reportchuyengia','reportphongthinghiem','taikhoan','danhsachdangky',
-                            'updatechuyengia','updatephongthinghiem','inbox',
-                            'sohuutritue','createsohuutritue','updatesohuutritue','deletesohuutritue',
-                            'thietbithunghiem','createthietbithunghiem','updatethietbithunghiem','deletethietbithunghiem',
-                            'import','linhvuc','linhvucchitiet','chuyennganh','chuyennganhchitiet',
-                            //chuyengia
-                            'congtrinh','daotao','ngoaingu','congtac','detai',
                         ], // add all actions to take guest to login page
                         'allow' => true,
                         'roles' => ['@'],

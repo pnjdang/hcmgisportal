@@ -33,6 +33,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\base\BaseObject;
+use yii\web\User;
 //use app\services\UtilsService;
 
 class SiteController extends Controller
@@ -173,12 +174,14 @@ class SiteController extends Controller
         $this->layout = "@app/views/layouts/user/main_user";
         $request = Yii::$app->request;
         if (!Yii::$app->user->isGuest) {
+            //DebugService::dumpdie(Yii::$app->user);
             return $this->goHome();
         }
 
         $model = new LoginForm();
         if ($request->isPost) {
             $model->load($request->post());
+            
             if (!$model->checkUsername()) {
                 UtilityService::alert('error_username');
                 return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
@@ -186,7 +189,8 @@ class SiteController extends Controller
                 UtilityService::alert('error_password');
                 return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
             } else {
-                Yii::$app->user->login($model->getUser(), $model->rememberMe ? 3600 * 24 * 30 : 0);
+                $model->login();
+//                Yii::$app->user->login($model->getUser(), $model->rememberMe ? 3600 * 24 * 30 : 0);
                 return $this->goBack();
             }
         }
@@ -203,7 +207,7 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
+//        DebugService::dumpdie('1');    
         return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
     }
 

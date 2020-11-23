@@ -18,14 +18,6 @@ use app\services\DebugService;
 class GisPostsController extends Controller
 {
 
-    public $const;
-
-    public function init(){
-        $this->const = [
-
-        ];
-    }
-
     /**
      * @inheritdoc
      */
@@ -56,7 +48,7 @@ class GisPostsController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-           'const' => $this->const
+//           'const' => $this->const
         ]);
     }
 
@@ -82,7 +74,7 @@ class GisPostsController extends Controller
         }else{
             return $this->render('view', [
                 'model' => $this->findModel($id),
-                'const' => $this->const,
+//                'const' => $this->const,
             ]);
         }
     }
@@ -146,7 +138,7 @@ class GisPostsController extends Controller
             } else {
                 return $this->render('create', [
                     'model' => $model,
-                    'const' => $this->const,
+//                    'const' => $this->const,
                 ]);
             }
         }
@@ -211,7 +203,7 @@ class GisPostsController extends Controller
             } else {
                 return $this->render('update', [
                     'model' => $model,
-                    'const' => $this->const,
+//                    'const' => $this->const,
                 ]);
             }
         }

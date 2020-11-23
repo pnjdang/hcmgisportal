@@ -10,7 +10,7 @@ namespace app\controllers\admin;
 
 use app\controllers\base\AbstractAdminController;
 use app\controllers\base\AbstractTlkhcnController;
-use app\models\AnhDaiDien;
+//use app\models\AnhDaiDien;
 use app\models\DoiMatKhau;
 use app\models\LoaiTaikhoan;
 use app\models\TaiKhoan;
@@ -27,7 +27,7 @@ class TaikhoanController extends AbstractAdminController
     {
         $model['taikhoan'] = Yii::$app->user->identity;
         $model['doimatkhau'] = new DoiMatKhau();
-        $model['anhdaidien'] = new AnhDaiDien();
+        //$model['anhdaidien'] = new AnhDaiDien();
 
         return $this->render('index', [
             'model' => $model,
@@ -61,10 +61,10 @@ class TaikhoanController extends AbstractAdminController
         $model = new DoiMatKhau();
         $model->load(\Yii::$app->request->post());
         if ($model->changePassword()) {
-            UtilityService::alert('pass_error');
+            UtilityService::alert('pass_success');
             return $this->redirect(\Yii::$app->request->referrer . '#doimatkhau');
         } else {
-            UtilityService::alert('pass_success');
+            UtilityService::alert('pass_error');
             return $this->redirect(\Yii::$app->request->referrer . '#doimatkhau');
         }
     }
