@@ -28,8 +28,8 @@ class Media extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['extension'], 'required'],
-            [['filename', 'filepath'], 'string', 'max' => 200],
+            [['filename'], 'file', 'maxFiles' => 10],
+            [['filepath'], 'string'],
             [['extension'], 'string', 'max' => 5],
         ];
     }
