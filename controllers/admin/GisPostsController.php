@@ -44,10 +44,12 @@ class GisPostsController extends Controller
     {
         $searchModel = new GisPostsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+		$post_type = GisPosts::find()->select('post_type')->groupBy('post_type')->all();
+		
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+			'post_type' => $post_type,
 //           'const' => $this->const
         ]);
     }

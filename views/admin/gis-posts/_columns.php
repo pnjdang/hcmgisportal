@@ -94,7 +94,7 @@ return [
          'attribute'=>'post_type',
          'width' => '200px',
          'filterType' => GridView::FILTER_SELECT2,
-         'filter' => ArrayHelper::map(app\models\GisPosts::find()->orderBy('post_type')->asArray()->groupBy('post_type')->all(), 'post_type', 'post_type'), 
+         'filter' => ArrayHelper::map($post_type, 'post_type', 'post_type'), 
             'filterWidgetOptions' => [
                 'pluginOptions' => ['allowClear' => true],
             ],
