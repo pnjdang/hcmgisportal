@@ -71,6 +71,7 @@ class SignupForm extends Model
             $taikhoan->tinh_trang = 1;
             $taikhoan->status = 1;
             $taikhoan->create_at = date('Y-m-d H:i:s');
+            $taikhoan->auth_key = Yii::$app->security->generateRandomString();
             $taikhoan->save();
             return true;
         } else {
