@@ -2,22 +2,14 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\GisPosts */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-<script src="https://cdn.tiny.cloud/1/1ciq6as39pygsfsj5trbf2cle1a56dxn9qn7yhnp523me5zv/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>
-    tinymce.init({
-      selector: '#gisposts-post_content',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-      toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-    });
-  </script>
+
+ 
 <div class="gis-posts-form">
     <div class="row">
         <div class="col-md-9 col-sm-9 col-xs-9">
@@ -27,7 +19,18 @@ use yii\helpers\ArrayHelper;
     
     <?= $form->field($model, 'post_name')->textInput(['maxlength' => true]) ?>
     
-    <?= $form->field($model, 'post_content')->textarea(['rows' => 35]) ?>
+    <?= $form->field($model, 'post_content')->widget(TinyMce::className(), [
+    'options' => ['rows' => 35],
+    'language' => 'vi',
+    'clientOptions' => [
+        'plugins' => [
+            "advlist autolink lists link charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+        'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    ]
+]);?>
 
     <?= $form->field($model, 'post_content_filtered')->textarea(['rows' => 4]) ?>
 

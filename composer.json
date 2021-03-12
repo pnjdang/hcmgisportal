@@ -30,7 +30,8 @@
         "wbraganca/yii2-dynamicform": "*",
         "kartik-v/yii2-widget-typeahead": "dev-master",
         "kartik-v/yii2-export": "dev-master",
-        "onmotion/yii2-widget-apexcharts": "^1.0"
+        "onmotion/yii2-widget-apexcharts": "^1.0",
+        "2amigos/yii2-tinymce-widget": "~1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

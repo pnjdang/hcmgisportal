@@ -207,7 +207,7 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-//        DebugService::dumpdie('1');    
+        DebugService::dumpdie(Yii::$app->user->isGuest);    
         return $this->redirect(Yii::$app->urlManager->createUrl('site/login'));
     }
 

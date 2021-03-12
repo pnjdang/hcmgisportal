@@ -15,7 +15,7 @@ use app\services\DebugService;
 /**
  * GisPostsController implements the CRUD actions for GisPosts model.
  */
-class GisPostsController extends Controller
+class GisPostsController extends \app\controllers\base\AbstractAdminController
 {
 
     /**

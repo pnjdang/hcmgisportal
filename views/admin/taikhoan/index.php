@@ -61,7 +61,7 @@ use yii\captcha\Captcha;
             <div class="portlet light profile-sidebar-portlet bordered">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="<?= Yii::$app->homeUrl.Yii::$app->user->identity->duong_dan?>" class="img-responsive" alt=""></div>
+                    <img src="" class="img-responsive" alt=""></div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
