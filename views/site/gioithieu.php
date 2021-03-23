@@ -281,7 +281,7 @@ use yii\widgets\ActiveForm;
                            <div class="full_heading white_fonts heading_main heading_style_1">
                               <h2>Trung tâm Ứng dụng Hệ thống Thông tin Địa lý Thành phố Hồ Chí Minh</h2>
                            </div>
-                            <p><b>Địa chỉ:</b> 244 Điện Biên Phủ, Phường 7, Quận 3, Thành phố Hồ Chí Minh<br>
+                            <p><b>Địa chỉ:</b> 244 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh<br>
                                 <b>Điện thoại:</b> (028) 3932 0963 – Fax: (028) 3932 0963<br>
                                 <b>Email:</b> contact@hcmgis.vn – <b>Website:</b> https://hcmgis.vn</p>
                            <div class="form_contact lien-he-form">
