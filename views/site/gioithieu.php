@@ -288,6 +288,7 @@ use yii\widgets\ActiveForm;
                                 <!-- form -->
                                 <?php $form = ActiveForm::begin(); ?>
                                     <fieldset>
+                                        
                                         <div class="field">
                                             <!--<input type="text" name="name" placeholder="Tên của bạn" required="">-->
                                             <?= $form->field($model, 'ho_ten')->textInput(['maxlength' => true,'placeholder' => 'Tên của bạn'])->label(false) ?>
