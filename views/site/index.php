@@ -11,8 +11,9 @@
       <div class="row">
           <div class="col-sm-12">
               <div class="full text_align_center">
-          <div class="full">
-              <img src="<?= Yii::$app->homeUrl?>site/images/banner_DHDXI.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px;">
+                  <div class="full"><a target="_blank" href="https://thitimhieuphapluat.moj.gov.vn/qt/cuocthi/Pages/trang-chu.aspx">
+              <img src="<?= Yii::$app->homeUrl?>site/images/banner_pl.jpg" alt="#" style="max-width: -webkit-fill-available;margin-bottom: 40px; width: 75%">
+                      </a>
           </div>
               </div>
           </div>
@@ -103,7 +104,7 @@
           <div class="team_imform">
               <p class="team_mem_name"><a href="https://geoevents.hcmgis.vn/" target="_blank">HCMGIS GEOEVENTS</a></p>
             <p>Nền tảng chia sẻ thông tin sự kiện.</p>
-            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=5298" target="_blank">Xem thêm…</a></p>
+            <p><a href="https://geoevents.hcmgis.vn/" target="_blank">Xem thêm…</a></p>
           </div>
         </div>
       </div>
@@ -114,18 +115,18 @@
           <div class="team_imform">
               <p class="team_mem_name"><a href="http://geostats.hcmgis.vn/" target="_blank">HCMGIS GEOSTATS</a></p>
             <p>Nền tảng thống kê không gian.</p>
-            <p><a href="<?= Yii::$app->homeUrl?>site/noidung?id=5299" target="_blank">Xem thêm…</a></p>
+            <p><a href="http://geostats.hcmgis.vn/" target="_blank">Xem thêm…</a></p>
           </div>
         </div>
       </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
         <div class="full team_blog">
             <div class="team_member_img"><a href="http://pointcloud.hcmgis.vn/" target="_blank"><img src="<?= Yii::$app->homeUrl?>images/pointcloud_thumb.jpg" alt="#"></a>
           </div>
           <div class="team_imform">
               <p class="team_mem_name"><a href="http://pointcloud.hcmgis.vn/" target="_blank">HCMGIS POINTCLOUD</a></p>
             <p>Nền tảng chia sẻ dữ liệu đám mây điểm.</p>
-            <p><a href="<?= Yii::$app->homeUrl?>site/index?#" target="_blank">Xem thêm…</a></p>
+            <p><a href="http://pointcloud.hcmgis.vn/" target="_blank">Xem thêm…</a></p>
           </div>
         </div>
       </div>
