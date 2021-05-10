@@ -36,7 +36,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\Taikhoan',
+            'identityClass' => 'app\modules\gisposts\models\auth\Taikhoan',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -62,11 +62,30 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => false,
             'rules' => [
+                [
+                    'pattern' => 'tin-tuc/<page:\d+>',
+                    'route' => 'tin-tuc/index',
+                    'defaults' => ['page' => 1,],
+                ],
+                '<alias:lien-he|gioi-thieu>' => 'site/<alias>',
+//                '<controller:[\w\d\-]+>/<action:[\w\d\-]+>' => '<controller>/<action>',
+                'tin-tuc/<alias:[\w\d\-]+>' => 'tin-tuc/view',
+                'tu-lieu/<alias:[\w\d\-]+>' => 'tu-lieu/view',
+                'san-pham/<alias:[\w\d\-]+>' => 'san-pham/view',
+                'san-pham' => 'san-pham/index',
+//                '<controller:tin-tuc|phong-thi-nghiem|to-chuc-khcn|doanh-nghiep-khcn>/<alias:[\w\d\-]+>/<action:[\w\d\-]+>' => '<controller>/<action>',
             ],
         ],
     ],
     'params' => $params,
+    'modules' => [
+        'cms' => [
+            'class' => 'app\modules\gisposts\GisPosts',
+            'defaultRoute' => 'site'
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {

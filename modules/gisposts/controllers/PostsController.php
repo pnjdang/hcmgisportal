@@ -20,7 +20,8 @@ class PostsController extends AbstractController
 
     public $const;
 
-    public function init(){
+    public function init()
+    {
         $this->const = [
             'title' => 'Bài viết',
             'actions' => [
@@ -71,7 +72,7 @@ class PostsController extends AbstractController
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-           'const' => $this->const,
+            'const' => $this->const,
             'categories' => $categories,
         ]);
     }
@@ -85,17 +86,18 @@ class PostsController extends AbstractController
     public function actionView($id)
     {
         $request = Yii::$app->request;
-        if($request->isAjax){
+        if ($request->isAjax) {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                    'title'=> "GisPosts #".$id,
-                    'content'=>$this->renderAjax('view', [
-                        'model' => $this->findModel($id),
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
-                ];
-        }else{
+                'title' => "GisPosts #" . $id,
+                'content' => $this->renderAjax('view', [
+                    'model' => $this->findModel($id),
+                    'const' => $this->const,
+                ]),
+                'footer' => Html::button('Close', ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a('Edit', ['update', 'id' => $id], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
+            ];
+        } else {
             return $this->render('view', [
                 'model' => $this->findModel($id),
                 'const' => $this->const,
@@ -115,44 +117,46 @@ class PostsController extends AbstractController
         $model = new GisPosts();
         $categories['post_type'] = PostType::find()->orderBy('type_name')->all();
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isGet) {
                 return [
-                    'title'=> "Create new GisPosts",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => "Create new GisPosts",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                         'categories' => $categories,
+                        'const' => $this->const,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
 
                 ];
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($model->load($request->post()) && $model->save()) {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new GisPosts",
-                    'content'=>'<span class="text-success">Create GisPosts success</span>',
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                            Html::a('Create More',['create'],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "Create new GisPosts",
+                    'content' => '<span class="text-success">Create GisPosts success</span>',
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::a('Create More', ['create'], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
 
                 ];
-            }else{
+            } else {
                 return [
-                    'title'=> "Create new GisPosts",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => "Create new GisPosts",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                         'categories' => $categories,
+                        'const' => $this->const,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
 
                 ];
             }
-        }else{
+        } else {
             /*
             *   Process for non-ajax request
             */
@@ -182,43 +186,46 @@ class PostsController extends AbstractController
         $model = $this->findModel($id);
         $categories['post_type'] = PostType::find()->orderBy('type_name')->all();
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isGet) {
                 return [
-                    'title'=> "Update GisPosts #".$id,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => "Update GisPosts #" . $id,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                         'categories' => $categories,
+                        'const' => $this->const,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
                 ];
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($model->load($request->post()) && $model->save()) {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "GisPosts #".$id,
-                    'content'=>$this->renderAjax('view', [
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "GisPosts #" . $id,
+                    'content' => $this->renderAjax('view', [
                         'model' => $model,
+                        'const' => $this->const,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::a('Edit', ['update', 'id' => $id], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
                 ];
-            }else{
-                 return [
-                    'title'=> "Update GisPosts #".$id,
-                    'content'=>$this->renderAjax('update', [
+            } else {
+                return [
+                    'title' => "Update GisPosts #" . $id,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                         'categories' => $categories,
+                        'const' => $this->const,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
                 ];
             }
-        }else{
+        } else {
             /*
             *   Process for non-ajax request
             */
@@ -246,56 +253,23 @@ class PostsController extends AbstractController
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isPost) {
+                $model->delete();
                 return [
-                    'title'=> "Update GisPosts #".$id,
-                    'content'=>$this->renderAjax('update', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+                    'forceReload' => '#crud-datatable-pjax',
+                    'forceClose'=>true,
                 ];
-            }else if($model->load($request->post()) && $model->save()){
-                return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "GisPosts #".$id,
-                    'content'=>$this->renderAjax('view', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
-                ];
-            }else{
-                return [
-                    'title'=> "Update GisPosts #".$id,
-                    'content'=>$this->renderAjax('update', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
-                ];
-            }
-        }else{
-            /*
-            *   Process for non-ajax request
-            */
-            if ($model->load($request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('update', [
-                    'model' => $model,
-                    'const' => $this->const,
-                ]);
+
             }
         }
     }
 
-    
+
     /**
      * Finds the GisPosts model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

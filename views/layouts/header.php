@@ -10,16 +10,16 @@
          <div class="container">
             <div class="row">
                <div class="col-md-9 col-lg-12">
-                   <div class="logo"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>"><img src="<?= Yii::$app->homeUrl?>images/logo.png" alt="#" /></a></div>
+                   <div class="logo"><a href="<?= Yii::$app->homeUrl?>"><img src="<?= Yii::$app->homeUrl?>images/logo.png" alt="#" /></a></div>
                   <div class="main_menu float-right">
                       <div class="menu" style="text-transform: uppercase">
                         <ul class="clearfix">
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/index') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/index')?>">Trang chủ</a></li>
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/gioithieu') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/gioithieu')?>">Giới thiệu</a></li>
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/sanpham') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/sanpham')?>">Sản phẩm</a></li>
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/tintuc') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/tintuc')?>">Tin tức</a></li>
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/tulieu') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/tulieu')?>">Tư liệu</a></li>
-                           <li class="<?= \app\services\UtilityService::checkPathInfo(Yii::$app->request->pathInfo,'site/lienhe') ? 'active' : ''?>"><a href="<?= Yii::$app->urlManager->createUrl('site/lienhe')?>">Liên hệ</a></li>
+                           <li class=""><a href="<?= Yii::$app->homeUrl?>">Trang chủ</a></li>
+                           <li class=""><a href="<?= Yii::$app->urlManager->createUrl(['gioi-thieu'])?>">Giới thiệu</a></li>
+                           <li class=""><a href="<?= Yii::$app->urlManager->createUrl(['san-pham'])?>">Sản phẩm</a></li>
+                           <li class=""><a href="<?= Yii::$app->urlManager->createUrl(['tin-tuc'])?>">Tin tức</a></li>
+                           <li class=""><a href="<?= Yii::$app->urlManager->createUrl(['tu-lieu'])?>">Tư liệu</a></li>
+                           <li class=""><a href="<?= Yii::$app->urlManager->createUrl(['lien-he'])?>">Liên hệ</a></li>
                         </ul>
                      </div>
                   </div>

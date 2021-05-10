@@ -30,7 +30,7 @@ use yii\helpers\ArrayHelper;
         <?php if ($model['hcmgis'] != null): ?>
             <?php foreach ($model['hcmgis'] as $i => $hcmgis): ?>
             <div class="box30">
-                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $hcmgis['ID']?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $hcmgis['id']?>" class="image fit" style="cursor: pointer; outline: 0px;">
                     <img src="<?= $hcmgis['post_img'] != null ? $hcmgis['post_img'] : Yii::$app->homeUrl.'images/HCMGIS_demo.jpg'?>" alt="">
                     <div class="inner">
                         <h3><?= ($hcmgis['post_title'] != null) ? $hcmgis['post_title'] : '' ?></h3>
@@ -66,7 +66,7 @@ use yii\helpers\ArrayHelper;
             <?php if ($model['sanpham'] != null): ?>
             <?php foreach ($model['sanpham'] as $i => $sanpham): ?>
             <div class="box25">
-                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['ID']?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['id']?>" class="image fit" style="cursor: pointer; outline: 0px;">
                     <img src="<?= $sanpham['post_img'] != null ? $sanpham['post_img'] : Yii::$app->homeUrl.'images/HCMGIS_demo.jpg'?>" alt="">
                     <div class="inner">
                         <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
@@ -101,7 +101,7 @@ use yii\helpers\ArrayHelper;
             <?php if ($model['tool'] != null): ?>
             <?php foreach ($model['tool'] as $i => $sanpham): ?>
             <div class="box25">
-                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['ID']?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['id']?>" class="image fit" style="cursor: pointer; outline: 0px;">
                     <img src="<?= $sanpham['post_img'] != null ? $sanpham['post_img'] : Yii::$app->homeUrl.'images/HCMGIS_demo.jpg'?>" alt="">
                     <div class="inner">
                         <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>

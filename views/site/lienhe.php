@@ -42,10 +42,11 @@ use yii\widgets\ActiveForm;
                             <div class="full_heading white_fonts heading_main heading_style_1">
                                 <h2>Trung tâm Ứng dụng Hệ thống Thông tin Địa lý Thành phố Hồ Chí Minh</h2>
                             </div>
-                            <p><b>Địa chỉ:</b> 244 Điện Biên Phủ, Phường 7, Quận 3, Thành phố Hồ Chí Minh<br>
-                                <b>Điện thoại:</b> (028) 3932 0963 – Fax: (028) 3932 0963<br>
-                                <b>Email:</b> contact@hcmgis.vn – <b>Website:</b> https://hcmgis.vn<br>
-                                <b>Giờ làm việc:</b> Thứ 2 đến thứ 6 (7h30 - 17h00)
+                            <p><i class="fa fa-map-marker"></i> 244 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, Thành phố Hồ Chí Minh<br>
+                                <i class="fa fa-phone"></i> (028) 3932 0963 – Fax: (028) 3932 0963<br>
+                                <i class="fa fa-envelope"></i> contact@hcmgis.vn<br>
+                                <i class="fa fa-globe"></i> https://hcmgis.vn<br>
+                                <i class="fa fa-clock-o"></i> Thứ 2 đến thứ 6 (7h30 - 17h00)
                             </p>
 
                             <div class="form_contact lien-he-form">
@@ -54,11 +55,11 @@ use yii\widgets\ActiveForm;
                                     <fieldset>
                                         <div class="field">
                                             <!--<input type="text" name="name" placeholder="Tên của bạn" required="">-->
-                                            <?= $form->field($model, 'ho_ten')->textInput(['maxlength' => true,'placeholder' => 'Tên của bạn'])->label(false) ?>
+                                            <?= $form->field($model, 'hoten')->textInput(['maxlength' => true,'placeholder' => 'Tên của bạn'])->label(false) ?>
                                         </div>
                                         <div class="field">
                                             <!--<input type="text" name="name" placeholder="Số điện thoại" required="">-->
-                                            <?= $form->field($model, 'dien_thoai')->textInput(['maxlength' => true,'placeholder' => 'Điện thoại'])->label(false) ?>
+                                            <?= $form->field($model, 'dienthoai')->textInput(['maxlength' => true,'placeholder' => 'Điện thoại'])->label(false) ?>
                                         </div>
                                         <div class="field">
                                             <!--<input type="email" name="email" placeholder="Email" required="">-->
@@ -66,7 +67,7 @@ use yii\widgets\ActiveForm;
                                         </div>
                                         <div class="field">
                                             <!--<textarea name="messager" placeholder="Nội dung" required=""></textarea>-->
-                                            <?= $form->field($model, 'noi_dung')->textarea(['rows' => 3,'placeholder' => 'Nội dung'])->label(false) ?>
+                                            <?= $form->field($model, 'noidung')->textarea(['rows' => 3,'placeholder' => 'Nội dung'])->label(false) ?>
                                         </div>
                                         <div class="field">
                                             <?php if (!Yii::$app->request->isAjax){ ?>

@@ -27,66 +27,25 @@ class AbstractController extends Controller
     {
 
         return [
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'rules' => [
-//                    [
-//                        'actions' => ['login', 'error'],
-//                        'allow' => true,
-//                    ],
-//                    [
-//                        'actions' => [
-//                            'index','create','update','view','delete','file','map','export','logout','list','thanhly',
-//                            /* Map */
-//                            'list-can','can-geojson','get-can',
-//                            /* SiteController*/
-//                            'thong-bao',
-//                            /* HopdongController*/
-//                            'hethan','saphethan','khongco','conhan','chuanhap',
-//                            /* SettingController*/
-//                            'chothue',
-////                            //CanController
-////                            'logout', 'index', 'danhsachnha', 'danhsachnhaxuong', 'danhsachho', 'search', 'danhsachhopdong', 'test', 'upload',
-////                            'updatecan', 'createcan', 'deleteho', 'hopdong', 'detail', 'updateho', 'thongtinchitiet', 'export',
-////                            'capnhathopdong', 'giahan', 'lapbangchiettinh', 'deletecan', 'danhsachcanxoa', 'deletefullcan', 'restorecan',
-////                            'createnguoithue', 'createtailieu', 'tailieu',
-////                            'createphuluc', 'updatephuluc', 'viewphuluc', 'dsphuluc', 'danhsach',
-////                            'creategiahan', 'updategiahan', 'viewgiahan', 'danhsachgiahan', 'deletegiahan',
-////                            'createbangchiettinh', 'updatebangchiettinh', 'viewbangchiettinh',
-////                            'danhsachthanhly', 'danhsachhethan', 'danhsachconhan', 'danhsachsaphethan', 'danhsachkhongco', 'danhsachchuanhap',
-////                            'danhsachbannha', 'exhoadonsudung', 'exsothutnv', 'exsothungay', 'extongsophaithuphuong', 'extonghopcoquan',
-////                            'searchhethan', 'searchconhan', 'searchsaphethan', 'searchkhongco', 'searchchuanhap', 'searchhientrang',
-////                            'exdanhsachhopdong', 'exdanhsachhethan', 'exdanhsachconhan', 'exdanhsachsaphethan', 'exdanhsachkhongco', 'exdanhsachchuanhap', 'exdoichieusothu', 'baocaothongke', 'thongtinchitiet', 'exchitietdathu', 'huyngungthu', 'excongnophuong', 'exphantichphuong', 'exphantichtnv', 'excongnotnv',
-////                            'setting', 'updatesetting', 'thongtincanhan', 'statistic', 'taikhoan', 'dataimport',
-////                            'exhopdong', 'exphuluc', 'danhsachthunganvien', 'danhsachthuchi', 'khoanthu', 'sothu', 'ngungthu', 'thanhly', 'huythanhly', 'updatesothu', 'thunganvien', 'updatethunganvien', 'updatekhoanthu', 'xoakt', 'xoast', 'xoatnv', 'exdoanhthunhao', 'exbangchiettinh', 'extongsophaithu', 'exsobothu', 'exchiettinhcongno',
-////                            'capnha', 'loainha', 'dienquanly', 'dienchinhsach', 'phuong', 'giadat',
-////                            'updatecapnha', 'updateloainha', 'updatedienquanly', 'updatedienchinhsach', 'updatephuong', 'updategiadat',
-////                            'deletetailieu', 'thanhlyhopdong', 'themhothue', 'createho', 'exdanhsachnha', 'updatethu',
-////                            'createbctnhaxuong', 'updatetailieu',
-////                            'danhsachnhacotheban', 'danhsachhientrang', 'danhsachnhadaban', 'danhsachnhakhongban', 'timkiemnhaban', 'timkiemkhongban', 'timkiemdaban',
-////                            'tongquan', 'map', 'thongbao', 'deletethunganvien', 'giadat', 'banggiadat', 'dieu65', 'updatedieu65', 'exhochuathue',
-////                            //ban nha
-////                            'viewhd', 'solieu', 'updatesolieu', 'exriengle', 'exchungcu', 'extapthe', 'exnonhao', 'exnonhaxuong', 'exnochenhlech', 'extotrinhriengle', 'extotrinhtapthe', 'extotrinhchungcu', 'chitietcan', 'nhale_sau', 'tapthe_sau', 'chungcu_sau', 'viewnhale_sau', 'capnhatnhale_sau', 'viewtapthe_sau', 'capnhattapthe_sau',
-////                            'viewchungcu_sau', 'capnhatchungcu_sau',
-////                            'nhale_truoc', 'tapthe_truoc', 'chungcu_truoc', 'viewnhale', 'capnhatnhale_truoc', 'viewtapthe', 'capnhattapthe_truoc',
-////                            'viewchungcu', 'capnhatchungcu_truoc', 'hosomoi', 'excongnophuongsxkd', 'excongnophuongshnn',
-////                            //HopdongController
-////                            'hethan', 'conhan', 'saphethan', 'chuanhap', 'khongco',
-////                            'bangchiettinh', 'exchenhlechno', 'lay', 'congno', 'xoacn', 'exchotno', 'exdanhsachthanhly', 'searchthanhly', 'check',
-////                            //TaikhoanController
-////                            'thongtincanhan', 'history', 'logout', 'lock', 'unlock',
-////                            'exdanhsachthanhly', 'searchthanhly',
-////                            'baocao4227', 'export4227',
-////                            'baocao4227-bieu7', 'export4227',
-//                        ], // add all actions to take guest to login page
-//                        'allow' => true,
-//                        'roles' => ['@'],
-//                    ],
-//                ],
-//                'denyCallback' => function () {
-//                    return \Yii::$app->response->redirect(['auth/auth/login']);
-//                },
-//            ]
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => [
+                            'index','create','update','view','delete','logout','getdata'
+                        ], // add all actions to take guest to login page
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+                'denyCallback' => function () {
+                    return \Yii::$app->response->redirect(['cms/auth/login']);
+                },
+            ]
         ];
     }
 
@@ -96,8 +55,8 @@ class AbstractController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
-                'view' => '@app/views/site/error',
-                'layout' => "@app/views/layouts/main",
+                'view' => '@app/modules/gisposts/views/site/error',
+                'layout' => "@app/modules/gisposts/views/layouts/main",
             ],
             // ...
         ];
