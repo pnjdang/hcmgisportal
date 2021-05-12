@@ -66,7 +66,7 @@ use yii\helpers\ArrayHelper;
             <?php if ($model['sanpham'] != null): ?>
                 <?php foreach ($model['sanpham'] as $i => $sanpham): ?>
                     <div class="box25">
-                        <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['id']?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                        <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
                             <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
                                 <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
@@ -101,7 +101,7 @@ use yii\helpers\ArrayHelper;
             <?php if ($model['tool'] != null): ?>
                 <?php foreach ($model['tool'] as $i => $sanpham): ?>
                     <div class="box25">
-                        <a href="<?= Yii::$app->urlManager->createUrl('site/noidung') . "?id=" . $sanpham['id']?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                        <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
                             <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
                                 <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>

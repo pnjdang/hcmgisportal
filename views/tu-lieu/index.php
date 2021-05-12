@@ -26,27 +26,19 @@ use yii\helpers\Url;
         </div>
         <div class="row">
             <?php if ($posts['doc'] != null): ?>
-                <?php foreach ($posts['doc'] as $i => $baiviet): ?>
-                    <?php
-                    if(is_link($baiviet->post_img)){
-                        $image = $baiviet->post_img;
-                    } elseif(!file_exists($baiviet->post_img)){
-                        $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
-                    } else {
-                        $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
-                    }
-                    ?>
+                <?php foreach ($posts['doc'] as $i => $sanpham): ?>
                     <div class="box25">
-                        <a href="<?= Yii::$app->urlManager->createUrl(['tu-lieu/'. $baiviet->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
-                            <img src="<?= $image?>" alt="">
+                        <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                            <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
-                                <h3><?= ($baiviet['post_title'] != null) ? $baiviet['post_title'] : '' ?></h3>
+                                <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
                             </div>
                         </a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
     </div>
 </section>
 
@@ -67,27 +59,17 @@ use yii\helpers\Url;
         </div>
         <div class="row">
             <?php if ($posts['pic'] != null): ?>
-                <?php foreach ($posts['pic'] as $i => $baiviet): ?>
-                    <?php
-                    if(is_link($baiviet->post_img)){
-                        $image = $baiviet->post_img;
-                    } elseif(!file_exists($baiviet->post_img)){
-                        $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
-                    } else {
-                        $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
-                    }
-                    ?>
+                <?php foreach ($posts['pic'] as $i => $sanpham): ?>
                     <div class="box25">
-                        <a href="<?= Yii::$app->urlManager->createUrl(['tu-lieu/'. $baiviet->post_name]) ?>" class="image fit" style="cursor: pointer; outline: 0px;">
-                            <img src="<?= $image?>" alt="">
+                        <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
+                            <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
-                                <h3><?= ($baiviet['post_title'] != null) ? $baiviet['post_title'] : '' ?></h3>
+                                <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
                             </div>
                         </a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
-
         </div>
     </div>
 </section>
