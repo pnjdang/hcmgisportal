@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
                             Nghị định 115 của Chính phủ về tự chủ, tự chịu trách nhiệm của tổ chức khoa học và công nghệ
                             công lập.</p>
                         <div class="full slide_bt"><a class="white_bt bt_main"
-                                                      href="<?= Yii::$app->homeUrl ?>site/noidung?id=5234">Profile giới
+                                                      href="<?= Yii::$app->homeUrl ?>san-pham/profile-gioi-thieu-trung-tam-hcmgis">Profile giới
                                 thiệu Trung tâm HCMGIS</a></div>
                     </div>
                 </div>
