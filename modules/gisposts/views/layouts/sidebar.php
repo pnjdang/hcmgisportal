@@ -34,20 +34,35 @@ $controller = Yii::$app->requestedAction->controller->id;
             </a>
         </li>
 
-        <li class="nav-item <?= $controller == 'media' ? 'active' : ''?>">
+       <li class="nav-item <?= $controller == 'media' ? 'active' : ''?>">
             <a href="<?= Yii::$app->urlManager->createUrl(['cms/media/index']) ?>" class="nav-link nav-toggle">
                 <i class="fa fa-picture-o"></i>
                 <span class="title">Media</span>
                 <span class="selected"></span>
             </a>
+            <ul class="sub-menu">
+                <li class="nav-item">
+                    <a href="<?= Yii::$app->urlManager->createUrl(['cms/media/index','file_type' => 'Image']) ?>" class="nav-link nav-toggle">
+                        <span class="title">Images</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= Yii::$app->urlManager->createUrl(['cms/media/index','file_type' => 'Video']) ?>" class="nav-link nav-toggle">
+                        <span class="title">Videos</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li class="nav-item <?= $controller == 'main-banner' ? 'active' : ''?>">
+                    <a href="<?= Yii::$app->urlManager->createUrl(['cms/main-banner/index']) ?>" class="nav-link nav-toggle">
+                        <span class="title">Banners</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item <?= $controller == 'media' ? 'active' : ''?>">
-            <a href="<?= Yii::$app->urlManager->createUrl(['cms/main-banner/index']) ?>" class="nav-link nav-toggle">
-                <i class="fa fa-star"></i>
-                <span class="title">Banner</span>
-                <span class="selected"></span>
-            </a>
-        </li>
+
+
 
         <li class="nav-item  ">
             <a href="javascript:;" class="nav-link nav-toggle">

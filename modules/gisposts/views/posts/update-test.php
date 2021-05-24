@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $model->post_title;
             </div>
             <div class="portlet-body">
                 <div class="gis-posts-update">
-                    <?= $this->render('_form', [
+                    <?= $this->render('_form-test', [
                         'model' => $model,
                         'image' => $image,
                         'categories' => $categories,

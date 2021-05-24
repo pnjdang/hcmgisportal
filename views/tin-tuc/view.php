@@ -18,7 +18,7 @@
                     <div class="date"><?= date('D d-m-Y', strtotime($model['post_date']))?></div>
                     <div class="post_content">
                         <?php if($model['ping_status'] == '1'):?>
-                            <?= ($model['post_img'] != null) ? '<img class="head_img" src="'.$model['post_img'].'">' : '' ?>
+                            <?= ($model['post_img'] != null) ? '<img class="head_img" src="'. Yii::$app->homeUrl.$model['post_img'].'">' : '' ?>
                         <?php endif;?>
                         <?= $model['post_content'] ?>
                     </div>

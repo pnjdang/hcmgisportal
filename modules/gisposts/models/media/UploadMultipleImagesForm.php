@@ -9,7 +9,7 @@ use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 use Yii;
 
-class UploadForm extends Model
+class UploadMultipleImagesForm extends Model
 {
     /**
      * @var UploadedFile
@@ -22,7 +22,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc,docx,png, jpg,mp4', 'maxSize' => 1024 * 1024 * 10],
+            [['file'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxSize' => 1024 * 1024 * 10],
             [['file_name', 'file_caption', 'file_type'], 'string'],
         ];
     }
@@ -38,6 +38,7 @@ class UploadForm extends Model
 
     public function uploadFile()
     {
+        DebugService::dumpdie($this);
         $fileupload = new FileUpload();
         $fileupload->file_name = $this->file_name;
         $fileupload->file_caption = $this->file_caption;
@@ -78,7 +79,7 @@ class UploadForm extends Model
                 $model->save();
                 return true;
             } else {
-                $path = "uploads/files/$filetype"."s/";
+                $path = "uploads/files/$filetype/";
 
                 if (!is_dir($path)) {
                     FileHelper::createDirectory($path);

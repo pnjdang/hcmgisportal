@@ -3,6 +3,8 @@
 namespace app\modules\gisposts\controllers;
 
 use app\modules\gisposts\models\categories\PostType;
+use app\modules\gisposts\models\media\UploadForm;
+use app\services\DebugService;
 use Yii;
 use app\modules\gisposts\models\posts\GisPosts;
 use app\modules\gisposts\models\posts\SearchGisPosts;
@@ -11,6 +13,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use \yii\web\Response;
 use yii\helpers\Html;
+use yii\web\UploadedFile;
 
 /**
  * PostsController implements the CRUD actions for GisPosts model.
@@ -34,6 +37,10 @@ class PostsController extends AbstractController
                     'url' => 'create',
                 ],
                 'update' => [
+                    'label' => 'Cập nhật',
+                    'url' => 'update',
+                ],
+                'update-test' => [
                     'label' => 'Cập nhật',
                     'url' => 'update',
                 ],
@@ -185,6 +192,8 @@ class PostsController extends AbstractController
         $request = Yii::$app->request;
         $model = $this->findModel($id);
         $categories['post_type'] = PostType::find()->orderBy('type_name')->all();
+        $image = new UploadForm();
+
 
         if ($request->isAjax) {
             /*
@@ -202,7 +211,14 @@ class PostsController extends AbstractController
                     'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
                         Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
                 ];
-            } else if ($model->load($request->post()) && $model->save()) {
+            } else if ($model->load($request->post())) {
+                $image->file = UploadedFile::getInstance($image, 'file');
+                if ($image->uploadFileWithModel($model)) {
+                    return [
+                        'forceReload' => '#pjax-media-index',
+                        'forceClose' => true,
+                    ];
+                }
                 return [
                     'forceReload' => '#crud-datatable-pjax',
                     'title' => "GisPosts #" . $id,
@@ -229,11 +245,15 @@ class PostsController extends AbstractController
             /*
             *   Process for non-ajax request
             */
-            if ($model->load($request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($request->post())) {
+                $image->file = UploadedFile::getInstance($image, 'file');
+                if($image->uploadFileWithModel($model,'images')){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
             } else {
                 return $this->render('update', [
                     'model' => $model,
+                    'image' => $image,
                     'categories' => $categories,
                     'const' => $this->const,
                 ]);
@@ -283,6 +303,80 @@ class PostsController extends AbstractController
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    public function actionUpdateTest($id)
+    {
+        $request = Yii::$app->request;
+        $model = $this->findModel($id);
+        $categories['post_type'] = PostType::find()->orderBy('type_name')->all();
+        $image = new UploadForm();
+
+
+        if ($request->isAjax) {
+            /*
+            *   Process for ajax request
+            */
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if ($request->isGet) {
+                return [
+                    'title' => "Update GisPosts #" . $id,
+                    'content' => $this->renderAjax('update', [
+                        'model' => $model,
+                        'categories' => $categories,
+                        'const' => $this->const,
+                    ]),
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
+                ];
+            } else if ($model->load($request->post())) {
+                $image->file = UploadedFile::getInstance($image, 'file');
+                if ($image->uploadFileWithModel($model)) {
+                    return [
+                        'forceReload' => '#pjax-media-index',
+                        'forceClose' => true,
+                    ];
+                }
+                return [
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "GisPosts #" . $id,
+                    'content' => $this->renderAjax('view', [
+                        'model' => $model,
+                        'const' => $this->const,
+                    ]),
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::a('Edit', ['update', 'id' => $id], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
+                ];
+            } else {
+                return [
+                    'title' => "Update GisPosts #" . $id,
+                    'content' => $this->renderAjax('update', [
+                        'model' => $model,
+                        'categories' => $categories,
+                        'const' => $this->const,
+                    ]),
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
+                ];
+            }
+        } else {
+            /*
+            *   Process for non-ajax request
+            */
+            if ($model->load($request->post())) {
+                $image->file = UploadedFile::getInstance($image, 'file');
+                if($image->uploadFileWithModel($model,'Image')){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            } else {
+                return $this->render('update-test', [
+                    'model' => $model,
+                    'image' => $image,
+                    'categories' => $categories,
+                    'const' => $this->const,
+                ]);
+            }
         }
     }
 }

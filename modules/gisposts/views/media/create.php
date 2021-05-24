@@ -24,7 +24,7 @@ use yii\helpers\ArrayHelper;
 <?= $form->field($model,'file_type')->dropDownList(ArrayHelper::map($filetypes,'type_name','type_name'),['prompt' => '--- Select file type ---'])?>
 
 <?= $form->field($model, 'file')->widget(FileInput::classname(), [
-    'options' => ['accept' => 'image/*'],
+    'options' => ['accept' => 'video/*,image/*,application/pdf,application/msword'],
 ])?>
 
 <?php if(!Yii::$app->request->isAjax):?>

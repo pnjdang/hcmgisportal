@@ -19,7 +19,8 @@ class FileTypeController extends AbstractController
 
     public $const;
 
-    public function init(){
+    public function init()
+    {
         $this->const = [
 
         ];
@@ -56,7 +57,7 @@ class FileTypeController extends AbstractController
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-           'const' => $this->const
+            'const' => $this->const
         ]);
     }
 
@@ -69,17 +70,17 @@ class FileTypeController extends AbstractController
     public function actionView($id)
     {
         $request = Yii::$app->request;
-        if($request->isAjax){
+        if ($request->isAjax) {
             Yii::$app->response->format = Response::FORMAT_JSON;
             return [
-                    'title'=> "FileType #".$id,
-                    'content'=>$this->renderAjax('view', [
-                        'model' => $this->findModel($id),
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-left','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
-                ];
-        }else{
+                'title' => "FileType #" . $id,
+                'content' => $this->renderAjax('view', [
+                    'model' => $this->findModel($id),
+                ]),
+                'footer' => Html::button('Close', ['class' => 'btn btn-default pull-left', 'data-dismiss' => "modal"]) .
+                    Html::a('Edit', ['update', 'id' => $id], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
+            ];
+        } else {
             return $this->render('view', [
                 'model' => $this->findModel($id),
                 'const' => $this->const,
@@ -98,42 +99,42 @@ class FileTypeController extends AbstractController
         $request = Yii::$app->request;
         $model = new FileType();
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isGet) {
                 return [
-                    'title'=> "Create new FileType",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => "Create new FileType",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
 
                 ];
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($model->load($request->post()) && $model->save()) {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "Create new FileType",
-                    'content'=>'<span class="text-success">Create FileType success</span>',
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                            Html::a('Create More',['create'],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "Create new FileType",
+                    'content' => '<span class="text-success">Create FileType success</span>',
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::a('Create More', ['create'], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
 
                 ];
-            }else{
+            } else {
                 return [
-                    'title'=> "Create new FileType",
-                    'content'=>$this->renderAjax('create', [
+                    'title' => "Create new FileType",
+                    'content' => $this->renderAjax('create', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
 
                 ];
             }
-        }else{
+        } else {
             /*
             *   Process for non-ajax request
             */
@@ -161,41 +162,41 @@ class FileTypeController extends AbstractController
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isGet) {
                 return [
-                    'title'=> "Update FileType #".$id,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => "Update FileType #" . $id,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
                 ];
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($model->load($request->post()) && $model->save()) {
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "FileType #".$id,
-                    'content'=>$this->renderAjax('view', [
+                    'forceReload' => '#crud-datatable-pjax',
+                    'title' => "FileType #" . $id,
+                    'content' => $this->renderAjax('view', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                            Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary pull-left','role'=>'modal-remote'])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::a('Edit', ['update', 'id' => $id], ['class' => 'btn btn-primary pull-left', 'role' => 'modal-remote'])
                 ];
-            }else{
-                 return [
-                    'title'=> "Update FileType #".$id,
-                    'content'=>$this->renderAjax('update', [
+            } else {
+                return [
+                    'title' => "Update FileType #" . $id,
+                    'content' => $this->renderAjax('update', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                                Html::button('Save',['class'=>'btn btn-primary pull-left','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary pull-left', 'type' => "submit"])
                 ];
             }
-        }else{
+        } else {
             /*
             *   Process for non-ajax request
             */
@@ -222,48 +223,44 @@ class FileTypeController extends AbstractController
         $request = Yii::$app->request;
         $model = $this->findModel($id);
 
-        if($request->isAjax){
+        if ($request->isAjax) {
             /*
             *   Process for ajax request
             */
             Yii::$app->response->format = Response::FORMAT_JSON;
-            if($request->isGet){
+            if ($request->isGet) {
                 return [
-                    'title'=> "Update FileType #".$id,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => "Update FileType #" . $id,
+                    'content' => $this->renderAjax('delete', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
-            }else if($model->load($request->post()) && $model->save()){
+            } else if ($request->isPost) {
+                $model->delete();
                 return [
-                    'forceReload'=>'#crud-datatable-pjax',
-                    'title'=> "FileType #".$id,
-                    'content'=>$this->renderAjax('view', [
-                        'model' => $model,
-                    ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::a('Edit',['update','id'=>$id],['class'=>'btn btn-primary','role'=>'modal-remote'])
+                    'forceReload' => '#crud-datatable-pjax',
+                    'forceClose' => true,
                 ];
-            }else{
+            } else {
                 return [
-                    'title'=> "Update FileType #".$id,
-                    'content'=>$this->renderAjax('update', [
+                    'title' => "Update FileType #" . $id,
+                    'content' => $this->renderAjax('delete', [
                         'model' => $model,
                     ]),
-                    'footer'=> Html::button('Close',['class'=>'btn btn-default pull-right','data-dismiss'=>"modal"]).
-                        Html::button('Save',['class'=>'btn btn-primary','type'=>"submit"])
+                    'footer' => Html::button('Close', ['class' => 'btn btn-default pull-right', 'data-dismiss' => "modal"]) .
+                        Html::button('Save', ['class' => 'btn btn-primary', 'type' => "submit"])
                 ];
             }
-        }else{
+        } else {
             /*
             *   Process for non-ajax request
             */
             if ($model->load($request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {
-                return $this->render('update', [
+                return $this->render('delete', [
                     'model' => $model,
                     'const' => $this->const,
                 ]);
@@ -271,7 +268,7 @@ class FileTypeController extends AbstractController
         }
     }
 
-    
+
     /**
      * Finds the FileType model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

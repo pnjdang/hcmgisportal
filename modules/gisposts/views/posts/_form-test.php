@@ -5,7 +5,6 @@ use yii\widgets\ActiveForm;
 use dosamigos\tinymce\TinyMce;
 use yii\helpers\ArrayHelper;
 use kartik\file\FileInput;
-
 /* @var $this yii\web\View */
 /* @var $model app\modules\gisposts\models\posts\GisPosts */
 /* @var $form yii\widgets\ActiveForm */
@@ -39,6 +38,9 @@ use kartik\file\FileInput;
     <div class="row">
         <div class="col-lg-3">
             <?= $form->field($model, 'post_type')->dropDownList(ArrayHelper::map($categories['post_type'], 'type_name', 'type_name'), ['prompt' => '--- Chọn loại bài viết ---']) ?>
+        </div>
+        <div class="col-lg-3">
+            <?= Html::a('<span class="fa fa-archive"></span> Browse',Yii::$app->urlManager->createUrl(['cms/media/browse']),['class' => 'btn btn-primary'])?>
         </div>
     </div>
     <div class="row">

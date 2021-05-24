@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 use app\modules\DCrud\DCrudAsset;
 use yii\bootstrap\Modal;
 use coderius\lightbox2\Lightbox2;
-
+use yii\widgets\LinkPager;
 DCrudAsset::register($this);
 
 $requestedAction = Yii::$app->requestedAction;
@@ -66,12 +66,14 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     <?php else:?>
-    <div class="row form-group">
+    <div class="form-group">
         <?php foreach($model as $i => $item):?>
-        <div class="col-lg-3 form-group">
+        <div class="col-lg-2 form-group">
             <div class="cbp-caption">
                 <div class="cbp-caption-defaultWrap img-wrap">
-                    <img src="../../<?= $item->file_path?>" alt="" width="100%"> </div>
+                    <img src="../../<?= $item->file_path?>" alt="" width="100%"
+                         style="max-height: 170px !important;"
+                    > </div>
                 <div class="cbp-caption-activeWrap">
                     <div class="cbp-l-caption-alignCenter">
                         <div class="cbp-l-caption-body">
@@ -83,6 +85,14 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <?php endforeach;?>
+
+    </div>
+    <div class="row form-group">
+        <div class="col-lg-12">
+            <?= LinkPager::widget([
+                'pagination' => $pagination,
+            ]);?>
+        </div>
     </div>
     <?php endif;?>
 </div>
