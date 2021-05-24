@@ -39,7 +39,7 @@
                         <p class="team_mem_name"><a href="https://portal.hcmgis.vn/" target="_blank">HCMGIS PORTAL</a>
                         </p>
                         <p>Nền tảng tích hợp và chia sẻ dữ liệu HCMGIS.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5294" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-portal" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="team_imform">
                         <p class="team_mem_name"><a href="https://maps.hcmgis.vn/" target="_blank">HCMGIS MAPS</a></p>
                         <p>Nền tảng bản đồ HCMGIS.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5295" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-map" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         <p class="team_mem_name"><a href="https://geosurvey.hcmgis.vn/" target="_blank">HCMGIS
                                 GEOSURVEY</a></p>
                         <p>Nền tảng thu thập dữ liệu thực địa.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5296" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-geosurvey" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         <p class="team_mem_name"><a href="http://georeference.hcmgis.vn/" target="_blank">HCMGIS
                                 GEOREFERENCE</a></p>
                         <p>Nền tảng đăng ký toạ độ và chia sẻ ảnh.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=2857" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-georeference" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                         <p class="team_mem_name"><a href="https://opendata.hcmgis.vn/" target="_blank">HCMGIS
                                 OPENDATA</a></p>
                         <p>Nền tảng chia sẻ dữ liệu mở.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=2875" target="_blank">Xem thêm….</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-opendata" target="_blank">Xem thêm….</a></p>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <p class="team_mem_name"><a href="https://storymaps.hcmgis.vn/" target="_blank">HCMGIS
                                 STORYMAPS</a></p>
                         <p>Nền tảng kể chuyện bằng bản đồ.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5297" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-storymaps" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@
                         <p class="team_mem_name"><a href="https://geotag.hcmgis.vn/" target="_blank">HCMGIS GEOTAG</a>
                         </p>
                         <p>Nền tảng gắn thẻ địa lý và chia sẻ ảnh.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=4166" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-geotag" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                         <p class="team_mem_name"><a href="https://geoevents.hcmgis.vn/" target="_blank">HCMGIS
                                 GEOEVENTS</a></p>
                         <p>Nền tảng chia sẻ thông tin sự kiện.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5298" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-geoevents" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                         <p class="team_mem_name"><a href="http://geostats.hcmgis.vn/" target="_blank">HCMGIS
                                 GEOSTATS</a></p>
                         <p>Nền tảng thống kê không gian.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/noidung?id=5299" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-geostats" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                         <p class="team_mem_name"><a href="http://pointcloud.hcmgis.vn/" target="_blank">HCMGIS
                                 POINTCLOUD</a></p>
                         <p>Nền tảng chia sẻ dữ liệu đám mây điểm.</p>
-                        <p><a href="<?= Yii::$app->homeUrl ?>site/index?#" target="_blank">Xem thêm…</a></p>
+                        <p><a href="<?= Yii::$app->homeUrl ?>?#" target="_blank">Xem thêm…</a></p>
                     </div>
                 </div>
             </div>
