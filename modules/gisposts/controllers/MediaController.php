@@ -77,7 +77,7 @@ class MediaController extends AbstractController
 //        $model = FileUpload::find()->filterWhere(['file_type' => $filetype])->orderBy('uploaded_at desc')->all();
         $query = FileUpload::find()->filterWhere(['file_type' => $filetype])->orderBy('uploaded_at desc');
         $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count,'pageSize' => 10]);
+        $pagination = new Pagination(['totalCount' => $count,'pageSize' => 24]);
         $model = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
@@ -175,8 +175,13 @@ class MediaController extends AbstractController
 
             \Yii::$app->response->format = Response::FORMAT_JSON;
             if($request->isPost){
-
-                if(unlink(realpath($model->file_path))){
+                if(!file_exists($model->file_path)){
+                    $model->delete();
+                    return [
+                        'forceReload' => '#pjax-media-index',
+                        'forceClose' => true,
+                    ];
+                } elseif(unlink(realpath($model->file_path))){
                     $model->delete();
                     return [
                         'forceReload' => '#pjax-media-index',
@@ -208,6 +213,23 @@ class MediaController extends AbstractController
             return $this->render('delete', [
                 'model' => $model,
             ]);
+        }
+    }
+
+    public function actionBrowse(){
+        $request = \Yii::$app->request;
+        $model = FileUpload::find()->orderBy('uploaded_at desc')->all();
+        if($request->isAjax){
+            \Yii::$app->response->format = Response::FORMAT_JSON;
+
+            if($request->isGet){
+                return [
+                    'title' => 'Media',
+                    'content' => $this->render('browse',[
+                        'model' => $model
+                    ]),
+                ];
+            }
         }
     }
 }

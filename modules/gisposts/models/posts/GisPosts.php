@@ -119,9 +119,14 @@ class GisPosts extends \yii\db\ActiveRecord
         $alias = str_replace('.','', $string);
         $alias = str_replace(',','', $alias);
         $alias = str_replace('"','', $alias);
+        $alias = str_replace('/','-', $alias);
         $alias = UtilityService::utf8convert($alias);
         $alias = mb_strtolower($alias);
         $alias = str_replace(' ','-', $alias);
         return $alias;
+    }
+
+    public function updatePost(){
+
     }
 }

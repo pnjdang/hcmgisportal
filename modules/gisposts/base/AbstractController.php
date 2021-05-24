@@ -36,7 +36,7 @@ class AbstractController extends Controller
                     ],
                     [
                         'actions' => [
-                            'index','create','update','view','delete','logout','getdata'
+                            'index','create','update','view','delete','logout','getdata','update-test','browse'
                         ], // add all actions to take guest to login page
                         'allow' => true,
                         'roles' => ['@'],

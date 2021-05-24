@@ -24,10 +24,10 @@ return [
         'class'=>'\kartik\grid\DataColumn',
         'attribute'=>'post_title',
     ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'post_img',
-    // ],
+     [
+         'class'=>'\kartik\grid\DataColumn',
+         'attribute'=>'post_img',
+     ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
         // 'attribute'=>'post_password',

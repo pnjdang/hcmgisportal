@@ -34,7 +34,7 @@ use yii\helpers\Url;
                     } elseif(!file_exists($baiviet->post_img)){
                         $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
                     } else {
-                        $image = Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg';
+                        $image = Yii::$app->homeUrl . $baiviet->post_img;
                     }
                     ?>
                     <div class="blog_post">

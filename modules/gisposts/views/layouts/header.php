@@ -48,7 +48,7 @@ if(isset($assetBundles[PortfolioAsset::class])){
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="<?= Yii::$app->urlManager->createUrl('cms/site/logout')?>">
+                            <a href="<?= Yii::$app->urlManager->createUrl('cms/auth/logout')?>">
                                 <i class="fa fa-sign-out"></i> Đăng xuất </a>
                         </li>
 
