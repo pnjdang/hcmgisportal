@@ -116,7 +116,9 @@ class GisPosts extends \yii\db\ActiveRecord
     }
 
     public function generateAlias($string){
-        $alias = str_replace('.','', $string);
+        $alias = str_replace(' - ','-', $string);
+        $alias = str_replace('&','', $alias);        
+        $alias = str_replace('.','', $alias);
         $alias = str_replace(',','', $alias);
         $alias = str_replace('"','', $alias);
         $alias = str_replace('/','-', $alias);

@@ -31,7 +31,7 @@ use yii\helpers\ArrayHelper;
                 <?php foreach ($model['hcmgis'] as $i => $hcmgis): ?>
                     <div class="box30">
                         <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$hcmgis->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
-                            <img src="<?= ($hcmgis->post_img == null || !file_exists($hcmgis->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $hcmgis->post_img?>" alt="">
+                            <img src="<?= ($hcmgis->post_img == null) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $hcmgis->post_img?>" alt="">
                             <div class="inner">
                                 <h3><?= ($hcmgis->post_title != null) ? $hcmgis->post_title : '' ?></h3>
                                 <div class="post_head"><?= ($hcmgis->post_content_filtered != null) ? $hcmgis->post_content_filtered : '' ?></div>
@@ -67,7 +67,7 @@ use yii\helpers\ArrayHelper;
                 <?php foreach ($model['sanpham'] as $i => $sanpham): ?>
                     <div class="box25">
                         <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
-                            <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
+                            <img src="<?= ($sanpham->post_img == null) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
                                 <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
                             </div>
@@ -102,7 +102,7 @@ use yii\helpers\ArrayHelper;
                 <?php foreach ($model['tool'] as $i => $sanpham): ?>
                     <div class="box25">
                         <a href="<?= Yii::$app->urlManager->createUrl(['san-pham/'.$sanpham->post_name])?>" class="image fit" style="cursor: pointer; outline: 0px;">
-                            <img src="<?= ($sanpham->post_img == null || !file_exists($sanpham->post_img)) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
+                            <img src="<?= ($sanpham->post_img == null) ? Yii::$app->homeUrl . 'uploads/app/images/HCMGIS_demo.jpg' : $sanpham->post_img?>" alt="">
                             <div class="inner">
                                 <h3><?= ($sanpham['post_title'] != null) ? $sanpham['post_title'] : '' ?></h3>
                             </div>
