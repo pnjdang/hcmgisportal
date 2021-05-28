@@ -123,6 +123,7 @@ class PostsController extends AbstractController
         $request = Yii::$app->request;
         $model = new GisPosts();
         $categories['post_type'] = PostType::find()->orderBy('type_name')->all();
+        $image = new UploadForm();
 
         if ($request->isAjax) {
             /*
@@ -167,11 +168,15 @@ class PostsController extends AbstractController
             /*
             *   Process for non-ajax request
             */
-            if ($model->load($request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($request->post())) {
+                $image->file = UploadedFile::getInstance($image, 'file');
+                if($image->uploadFileWithModel($model,'images')){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
             } else {
                 return $this->render('create', [
                     'model' => $model,
+                    'image' => $image,
                     'categories' => $categories,
                     'const' => $this->const,
                 ]);

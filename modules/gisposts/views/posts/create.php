@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $model->post_title;
                     <?= $this->render('_form', [
                         'model' => $model,
                         'categories' => $categories,
+                        'image' => $image,
                     ]) ?>
                 </div>
             </div>

@@ -29,7 +29,7 @@ use kartik\file\FileInput;
                     'initialPreview' => [
                         ($model->post_img != null) ? Yii::$app->homeUrl.$model->post_img : '',
                     ],
-                    'initialPreviewAsData' => true,
+//                    'initialPreviewAsData' => true,
                     'overwriteInitial' => true,
                     'maxFileSize' => 2800
                 ]
