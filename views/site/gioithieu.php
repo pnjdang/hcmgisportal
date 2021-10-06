@@ -249,8 +249,8 @@ use yii\widgets\ActiveForm;
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                 <div class="full team_blog">
                     <div class="team_imform">
-                        <p class="team_mem_name">Quách Đồng Thắng</p>
-                        <p>Trưởng Phòng Phát triển Công nghệ</p>
+                        <p class="team_mem_name">Huỳnh Minh Đức</p>
+                        <p>Phó Phòng Phát triển Công nghệ</p>
                     </div>
                 </div>
             </div>
