@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=192.168.2.131;dbname=hcmgisportal;port=5432',
+    'dsn' => 'pgsql:host=192.168.1.44;dbname=hcmgisportal;port=5432',
     'username' => 'postgres',
     'password' => '@hcmgis#',
     'charset' => 'utf8',

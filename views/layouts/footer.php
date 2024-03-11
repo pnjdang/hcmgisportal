@@ -14,7 +14,7 @@
                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 margin_bottom_30">
                      <div class="full width_9" style="margin-bottom:25px;"> <a href="#?"><img class="img-responsive" width="250" src="<?= Yii::$app->homeUrl?>images/logo-bot.png" alt="#"></a> </div>
                      <div class="full width_9">
-                        <p>Center for Applied GIS of Ho Chi Minh City (HCMGIS) focuses on consulting, developing, training and transferring GIS solutions and applications in urban management, natural resources and environment, and economic-cultural-social development.</p>
+                        <p>Ho Chi Minh City Geographic Information System Applycation Center (HCMGIS) focuses on consulting, developing, training and transferring GIS solutions and applications in urban management, natural resources and environment, and economic-cultural-social development.</p>
                      </div>
                   </div>
                   
