@@ -228,45 +228,45 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Phạm Quốc Phương</p>
-                        <p>Giám đốc Trung tâm</p>
+                        <p style="text-transform: uppercase;>Giám đốc Trung tâm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="full team_blog">
+                    <div class="team_imform">
+                        <p class="team_mem_name">Phạm Đức Thịnh</p>
+                        <p style="text-transform: uppercase;">Phó Giám đốc</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="full team_blog">
-                    <div class="team_imform">
-                        <p class="team_mem_name">Phạm Đức Thịnh</p>
-                        <p style="text-transform: uppercase; font-size: 12px">Phó Giám đốc</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Huỳnh Minh Đức</p>
-                        <p style="text-transform: uppercase; font-size: 12px">Phó trưởng Phòng Phát triển Công nghệ</p>
+                        <p style="text-transform: uppercase;">Phó trưởng Phòng Phát triển Công nghệ</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Hà Thị Thu Huệ</p>
-                        <p style="text-transform: uppercase; font-size: 12px">Trưởng Phòng Hành chính - Kế toán</p>
+                        <p style="text-transform: uppercase;">Trưởng Phòng Hành chính - Kế toán</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Khưu Minh Cảnh</p>
-                        <p style="text-transform: uppercase; font-size: 12px">Phó Trưởng Phòng Cơ sở Dữ liệu</p>
+                        <p style="text-transform: uppercase;">Phó Trưởng Phòng Cơ sở Dữ liệu</p>
                     </div>
                 </div>
             </div>
