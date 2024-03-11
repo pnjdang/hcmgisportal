@@ -9,7 +9,7 @@
 <header class="header header_style1">
          <div class="container">
             <div class="row">
-               <div class="col-md-9 col-lg-12">
+               <div class="col-md-12 col-lg-12">
                    <div class="logo"><a href="<?= Yii::$app->homeUrl?>"><img src="<?= Yii::$app->homeUrl?>images/logo.png" alt="#" /></a></div>
                   <div class="main_menu float-right">
                       <div class="menu" style="text-transform: uppercase">
@@ -24,9 +24,33 @@
                      </div>
                   </div>
                </div>
-               <!--<div class="col-md-3 col-lg-2">
-                  <div class="right_bt"><a class="bt_main" href="index.html">Get Support</a> </div>
-               </div>-->
             </div>
          </div>
       </header>
+	  <script>
+	  $(document).ready(function() {
+    "use strict";
+    $('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
+    $('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+    $(".menu > ul").before("<a href=\"#\" class=\"menu-mobile\">&nbsp;</a>");
+    $(".menu > ul > li").hover(function(e) {
+        if ($(window).width() > 991) {
+            $(this).children("ul").stop(true, false).fadeToggle(150);
+            e.preventDefault();
+        }
+    });
+    $(".menu > ul > li").on('click', function() {
+        if ($(window).width() <= 991) {
+            $(this).children("ul").fadeToggle(150);
+        }
+    });
+    $(".menu-mobile").on('click', function(e) {
+        $(".menu > ul").toggleClass('show-on-mobile');
+        e.preventDefault();
+    });
+});
+$(window).resize(function() {
+    $(".menu > ul > li").children("ul").hide();
+    $(".menu > ul").removeClass('show-on-mobile');
+});
+	  </script>

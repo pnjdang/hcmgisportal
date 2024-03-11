@@ -14,8 +14,9 @@
             <div class="col-sm-12">
                 <div class="full text_align_center">
                     <div class="full">
-                        <img src="<?= $model['banner']->file_path?>" alt="#"
+                        <a href="https://khaosatddci.com.vn/" target="_blank"><img src="<?= $model['banner']->file_path?>" alt="#"
                              style="max-width: -webkit-fill-available;margin-bottom: 40px;">
+                         </a>
                     </div>
                 </div>
             </div>
@@ -92,10 +93,10 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <div class="full team_blog">
-                    <div class="team_member_img"><a href="https://storymaps.hcmgis.vn/" target="_blank"><img
+                    <div class="team_member_img"><a href="https://new-storymaps.hcmgis.vn/" target="_blank"><img
                                     src="<?= Yii::$app->homeUrl ?>images/storymap.png" alt="#"></a></div>
                     <div class="team_imform">
-                        <p class="team_mem_name"><a href="https://storymaps.hcmgis.vn/" target="_blank">HCMGIS
+                        <p class="team_mem_name"><a href="https://new-storymaps.hcmgis.vn/" target="_blank">HCMGIS
                                 STORYMAPS</a></p>
                         <p>Nền tảng kể chuyện bằng bản đồ.</p>
                         <p><a href="<?= Yii::$app->homeUrl ?>san-pham/hcmgis-storymaps" target="_blank">Xem thêm…</a></p>
