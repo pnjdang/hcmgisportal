@@ -34,7 +34,7 @@ AppAsset::register($this);
 <div class="">
     <?php include('footer.php'); ?>
 </div>
-<script type="texjavascript">
+<script type="text/javascript">
 var _govaq = window._govaq || [];
  _govaq.push(['trackPageView']);
  _govaq.push(['enableLinkTracking']);
