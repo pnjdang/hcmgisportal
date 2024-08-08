@@ -34,6 +34,24 @@ AppAsset::register($this);
 <div class="">
     <?php include('footer.php'); ?>
 </div>
+<script type="texjavascript">
+var _govaq = window._govaq || [];
+ _govaq.push(['trackPageView']);
+ _govaq.push(['enableLinkTracking']);
+ (function () {
+  _govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
+  _govaq.push(['setSiteId', '271']);
+  var d = document,
+  g = d.createElement('script'),
+  s = d.getElementsByTagName('script')[0];
+  g.type = 'text/javascript';
+  g.async = true;
+  g.defer = true;
+  g.src = 'https://f-emc.ngsp.gov.vn/embed/gov-tracking.min.js';
+  s.parentNode.insertBefore(g, s);
+  })();
+</script>
+
 <?php $this->endBody() ?>
 </body>
 </html>
