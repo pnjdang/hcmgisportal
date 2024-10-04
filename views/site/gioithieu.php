@@ -246,7 +246,15 @@ use yii\widgets\ActiveForm;
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
+                <div class="full team_blog">
+                    <div class="team_imform">
+                        <p class="team_mem_name">Phạm Việt Ngữ</p>
+                        <p style="text-transform: uppercase;">trưởng Phòng Tư vấn Dịch vụ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Huỳnh Minh Đức</p>
@@ -254,7 +262,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Hà Thị Thu Huệ</p>
@@ -262,7 +270,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Khưu Minh Cảnh</p>
