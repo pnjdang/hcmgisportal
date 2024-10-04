@@ -250,7 +250,7 @@ use yii\widgets\ActiveForm;
                 <div class="full team_blog">
                     <div class="team_imform">
                         <p class="team_mem_name">Phạm Việt Ngữ</p>
-                        <p style="text-transform: uppercase;">trưởng Phòng Tư vấn Dịch vụ</p>
+                        <p style="text-transform: uppercase;">Phó trưởng Phòng Tư vấn Dịch vụ</p>
                     </div>
                 </div>
             </div>
